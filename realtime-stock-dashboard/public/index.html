@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Real-time Stock Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <h2>Symbols</h2>
+      <ul id="symbolList"></ul>
+
+      <div class="controls">
+        <label>Indicator: SMA</label>
+        <label for="smaPeriod">SMA period:
+          <input id="smaPeriod" type="number" min="2" max="200" value="20" />
+        </label>
+        <button id="pauseBtn">Pause</button>
+      </div>
+
+      <div class="meta">
+        <div>Current: <span id="currentPrice">—</span></div>
+        <div>Trend: <span id="trend">—</span></div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <h1 id="title">Live Price</h1>
+      <canvas id="chart" height="120"></canvas>
+      <div class="footer">
+        <small>Server: WebSocket live updates • Local demo</small>
+      </div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
